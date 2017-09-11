@@ -52,7 +52,7 @@ while(True):
                 numStr="";
                 startFlag=True;
         elif(len(numStr)==4 and startFlag==True):
-            print("Binary", numStr);
+            print("Binary", numStr[::-1]);
             print('Frame:'+str(frameNum));
             print('GetNum:'+str(bin2num(numStr)));
             numStr="";
@@ -63,4 +63,8 @@ while(True):
     end = datetime.datetime.now()
     diff = end - start        
     delayDiff=int(diff.total_seconds() * 1000);
-    cv2.waitKey(200-delayDiff);
+
+    if(delayDiff>200):
+        cv2.waitKey(1);
+    else:
+        cv2.waitKey(200-delayDiff);
