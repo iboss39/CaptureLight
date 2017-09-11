@@ -1,0 +1,1 @@
+py CaptureLight.py 2>er.txt
